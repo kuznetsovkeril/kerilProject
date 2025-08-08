@@ -6,15 +6,13 @@
 //
 
 class Helper {
-    var persons: [Person] = []
+    private var persons: [User] = []
     
-    func addPerson(person: Person) {
+    func addPerson(person: User) {
         persons.append(person)
     }
     
-    func showPerson() {
-        for person in persons {
-            print(person.fullName)
+    func getPerson() -> [User]{
+        return persons
         }
-    }
 }

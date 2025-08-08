@@ -8,23 +8,27 @@
 import UIKit
 
 class ViewController: UIViewController {
+    let helper = Helper()
     
-    var personOne = Person()
-    
-    var personTwo = Person()
-    
-    var helper = Helper()
+    func showFullName(users: [User]) {
+        for user in users {
+            print(user.personalData.fullName)
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        personOne.name = "Alla"
-        personOne.surname = "Pugacheva"
-        personTwo.name = "Oleg"
-        personTwo.surname = "Miami"
+        let personOne = Person(name: "Alla", surname: "Pugacheva")
         
-        helper.addPerson(person: personOne)
-        helper.addPerson(person: personTwo)
-        helper.showPerson()
+        let personTwo = Person(name: "Oleg", surname: "Miami")
+        
+        let userOne = User(username: "alla", password: "123", personalData: personOne)
+        
+        let userTwo = User(username: "oleg", password: "123", personalData: personTwo)
+        
+        helper.addPerson(person: userOne)
+        helper.addPerson(person: userTwo)
+        showFullName(users: helper.getPerson())
     }
 }
