@@ -9,14 +9,22 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let person = Person()
+    var personOne = Person()
+    
+    var personTwo = Person()
+    
+    var helper = Helper()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("Меня зовут \(person.fullName), я создал свое первое приложениеname")
+        personOne.name = "Alla"
+        personOne.surname = "Pugacheva"
+        personTwo.name = "Oleg"
+        personTwo.surname = "Miami"
+        
+        helper.addPerson(person: personOne)
+        helper.addPerson(person: personTwo)
+        helper.showPerson()
     }
-
-
 }
-

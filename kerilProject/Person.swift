@@ -6,7 +6,7 @@
 //
 
 class Person {
-    var name: String = "Keril"
-    var surname: String = "Kuznetsov"
+    var name: String = " "
+    var surname: String = " "
     var fullName: String { "\(name) \(surname)" }
 }
