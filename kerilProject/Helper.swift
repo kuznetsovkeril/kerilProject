@@ -12,7 +12,11 @@ class Helper {
         persons.append(person)
     }
     
-    func getPerson() -> [User]{
-        return persons
-        }
+    func addUsers(users: [User]) {
+        persons.append(contentsOf: users)
+    }
+    
+    func getPerson() -> [User] {
+        persons
+    }
 }
