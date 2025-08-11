@@ -8,12 +8,12 @@
 class UserRepository {
     
     func getUsers() -> [User] {
-        [userOne, userTwo]
+        let personOne = Person(name: "Alla", surname: "Pugacheva")
+        let personTwo = Person(name: "Oleg", surname: "Miami")
+
+        let userOne = User(username: "alla", password: "123", personalData: personOne)
+        let userTwo = User(username: "oleg", password: "123", personalData: personTwo)
+        
+        return [userOne, userTwo]
     }
 }
-
-private let personOne = Person(name: "Alla", surname: "Pugacheva")
-private let personTwo = Person(name: "Oleg", surname: "Miami")
-
-private let userOne = User(username: "alla", password: "123", personalData: personOne)
-private let userTwo = User(username: "oleg", password: "123", personalData: personTwo)
