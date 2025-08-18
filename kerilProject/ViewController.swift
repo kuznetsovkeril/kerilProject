@@ -11,7 +11,6 @@ class ViewController: UIViewController {
     
     private let helper = Helper()
     private let userRepository = UserRepository()
-    private var users: [User] = []
     private let fullNameLabel = UILabel()
     private let someButton = UIButton()
     private let stackView = UIStackView()
@@ -20,17 +19,18 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .gray
         
-        users = userRepository.getUsers()
-        helper.addUsers(users: users)
+        let data = userRepository.getUsers()
+        helper.addUsers(users: data)
+        let users = helper.getPerson()
         
-        setupLabel()
+        setupLabel(users)
         setupButton()
         setupStackView()
         view.addSubview(stackView)
         setupLayout()
     }
 
-    private func setupLabel() {
+    private func setupLabel(_ users: [User]) {
         let fullName = users.randomElement()?.personalData.fullName
         fullNameLabel.text = fullName
         fullNameLabel.font = .systemFont(ofSize: 20, weight: .bold)
