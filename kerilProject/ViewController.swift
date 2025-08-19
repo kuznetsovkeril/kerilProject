@@ -19,9 +19,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .gray
         
-        let data = userRepository.getUsers()
-        helper.addUsers(users: data)
-        let users = helper.getPerson()
+        let users = userRepository.getUsers()
         
         setupLabel(users)
         setupButton()

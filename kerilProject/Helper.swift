@@ -17,6 +17,7 @@ class Helper {
     }
     
     func getRandomPerson(_ users: [User]) -> String? {
-        users.randomElement()?.personalData.fullName
+        addUsers(users: users)
+        return persons.randomElement()?.personalData.fullName
     }
 }
