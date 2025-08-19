@@ -8,15 +8,15 @@
 class Helper {
     private var persons: [User] = []
     
-    func addPerson(person: User) {
-        persons.append(person)
-    }
-    
     func addUsers(users: [User]) {
         persons.append(contentsOf: users)
     }
     
     func getPerson() -> [User] {
         persons
+    }
+    
+    func getRandomPerson(_ users: [User]) -> String? {
+        users.randomElement()?.personalData.fullName
     }
 }

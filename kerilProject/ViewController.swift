@@ -31,7 +31,7 @@ class ViewController: UIViewController {
     }
 
     private func setupLabel(_ users: [User]) {
-        let fullName = users.randomElement()?.personalData.fullName
+        let fullName = helper.getRandomPerson(users)
         fullNameLabel.text = fullName
         fullNameLabel.font = .systemFont(ofSize: 20, weight: .bold)
         fullNameLabel.textColor = .black
