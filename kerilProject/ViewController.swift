@@ -12,7 +12,8 @@ class ViewController: UIViewController {
     private let helper = Helper()
     private let userRepository = UserRepository()
     private let fullNameLabel = UILabel()
-    private let someButton = UIButton()
+    private let randomButton = RandomButtonView(title: "Hide User", color: .green, hasShadow: true)
+    private let randomButtonTwo = RandomButtonView(title: "Show New User", color: .red, hasShadow: false)
     private let stackView = UIStackView()
 
     override func viewDidLoad() {
@@ -22,7 +23,6 @@ class ViewController: UIViewController {
         let users = userRepository.getUsers()
         
         setupLabel(users)
-        setupButton()
         setupStackView()
         view.addSubview(stackView)
         setupLayout()
@@ -36,12 +36,6 @@ class ViewController: UIViewController {
         fullNameLabel.textAlignment = .center
     }
     
-    private func setupButton() {
-        someButton.setTitle("Randomize", for: .normal)
-        someButton.backgroundColor = .black
-        someButton.layer.cornerRadius = 10
-    }
-    
     private func setupStackView() {
         stackView.axis = .horizontal
         stackView.distribution = .fill
@@ -49,7 +43,8 @@ class ViewController: UIViewController {
         stackView.spacing = 0
         
         stackView.addArrangedSubview(fullNameLabel)
-        stackView.addArrangedSubview(someButton)
+        stackView.addArrangedSubview(randomButton)
+        stackView.addArrangedSubview(randomButtonTwo)
     }
     
     private func setupLayout() {
@@ -61,8 +56,10 @@ class ViewController: UIViewController {
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             stackView.heightAnchor.constraint(equalToConstant: 60),
             
-            someButton.widthAnchor.constraint(equalToConstant: 130),
-            someButton.heightAnchor.constraint(equalToConstant: 40),
+            randomButton.widthAnchor.constraint(equalToConstant: 130),
+            randomButton.heightAnchor.constraint(equalToConstant: 40),
+            randomButtonTwo.widthAnchor.constraint(equalToConstant: 130),
+            randomButtonTwo.heightAnchor.constraint(equalToConstant: 40)
         ])
     }
 }
