@@ -6,8 +6,8 @@
 //
 import UIKit
 
-class RandomButtonView: UIButton {
-    init(title: String, color: UIColor, hasShadow: Bool) {
+class RandomButton: UIButton {
+    init(title: String, color: UIColor, hasShadow: Bool = false) {
         super.init(frame: .zero)
         setupView(title, color, hasShadow)
     }
@@ -16,7 +16,7 @@ class RandomButtonView: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupView(_ title: String, _ color: UIColor, _ hasShadow: Bool) {
+    private func setupView(_ title: String, _ color: UIColor, _ hasShadow: Bool) {
         setTitle(title, for: .normal)
         backgroundColor = color
         layer.cornerRadius = 10

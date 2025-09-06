@@ -12,8 +12,8 @@ class ViewController: UIViewController {
     private let helper = Helper()
     private let userRepository = UserRepository()
     private let fullNameLabel = UILabel()
-    private let randomButton = RandomButtonView(title: "Hide User", color: .green, hasShadow: true)
-    private let randomButtonTwo = RandomButtonView(title: "Show New User", color: .red, hasShadow: false)
+    private let randomButton = RandomButton(title: "Hide User", color: .green, hasShadow: true)
+    private let randomButtonTwo = RandomButton(title: "Show New User", color: .red)
     private let stackView = UIStackView()
 
     override func viewDidLoad() {
