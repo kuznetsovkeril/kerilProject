@@ -16,6 +16,12 @@ class RandomButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        let shadowPath = UIBezierPath(rect: bounds)
+        layer.shadowPath = shadowPath.cgPath
+    }
+    
     private func setupView(_ title: String, _ color: UIColor, _ hasShadow: Bool) {
         setTitle(title, for: .normal)
         backgroundColor = color
